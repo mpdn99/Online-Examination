@@ -1,12 +1,8 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
+import grantPermission from './grantPermission'
 
 const RoleBasedRouting = ({component: Component, roles, ...rest}) => {
-    const grantPermission = (requestedRoles) => {
-        const permittedRoles =  sessionStorage.getItem('roles');
-        return (permittedRoles===requestedRoles)
-
-    }
     return (
         <div>
             {grantPermission(roles)&&(
